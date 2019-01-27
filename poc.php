@@ -71,7 +71,7 @@ class parseCss {
 				if(is_array($c))
 					$c = $this->render($c);
 				if(strpos($s, '@') !== 0)
-					$s = $this->currentPrefix().' '.$s;
+					$s = str_replace(',', ' '.$s.',', $this->currentPrefix()).' '.$s;
 				$out .= $s.' {'."\n".$c."\n".'}'."\n\n";
 			}
 			
