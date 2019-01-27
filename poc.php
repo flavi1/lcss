@@ -65,6 +65,7 @@ class parseCss {
 			if(strpos($s, '@(') === 0 and substr($s, -1) == ')') {
 				array_push($this->prefixesStack, substr($s, 2, -1));
 				$out .= $this->render($c);
+				array_pop($this->prefixesStack);
 			}
 			else {
 				if(is_array($c))
