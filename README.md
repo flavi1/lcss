@@ -54,12 +54,16 @@ To this :
 
 ```
 
+
+That's all folks!
+Do you realy need more?
+
+
 TODO :
 ======
 
 * parse imported files (@import) adding parent selectors
 * Remove or keep comments ?
 * Two modes. With indentation to help debugging, and integrated minification
+* Maybe adding simple variables. (not sure)
 
-That's all folks!
-Do you realy need more?
