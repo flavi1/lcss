@@ -1,5 +1,5 @@
 # lcss
-Light CSS pre processor
+Light CSS preprocessor
 
 Only one feature : Selector inheritance.
 It consists to point hierarchicaly to your selectors, then children blocks don't have to repeat parents definition. And imported css (with @import) should be realy more reusable.
