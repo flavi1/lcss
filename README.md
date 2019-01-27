@@ -1,4 +1,4 @@
-# lcss
+# LCSS
 Light CSS preprocessor
 
 Only one feature : Selector inheritance.
