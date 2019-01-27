@@ -50,3 +50,12 @@ To this :
 }
 
 ```
+
+TODO :
+======
+
+* parse imported files (@import) adding parent selectors
+* Remove or keep comments ?
+* Two modes. With indentation to help debugging, and integrated minification
+
+That's all folks!
