@@ -4,29 +4,28 @@ Light CSS pre processor
 Just transform this :
 ```
 @(#parent1) {
-	@(.sub1.myClass > span, .sub2.active) {
-		body { color: #888; }
-		@media print {
-			body { color: #333; }
-		}
-	}
-	@(.sub3) {
-		code { color: red; }
-	}
-	code { color: blue; }
+  @(.sub1.myClass > span, .sub2.active) {
+    body { color: #888; }
+    @media print {
+      body { color: #333; }
+    }
+  }
+  @(.sub3) {
+    code { color: red; }
+  }
+  code { color: blue; }
 }
 
 @(#parent) {
-	.sous-style {
-		display: none;
-	}
+  .sous-style {
+    display: none;
+  }
 }
 ```
 
 To this :
 
 ```
-
 #parent1 .sub1.myClass > span body, #parent1  .sub2.active body {
  color: #888; 
 }
@@ -49,8 +48,8 @@ To this :
 
 #parent .sous-style {
 
-		display: none;
-	
+    display: none;
+  
 }
 
 ```
