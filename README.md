@@ -6,6 +6,7 @@ It consists to point hierarchicaly to your selectors, then children blocks don't
 For emacs users, you can think about minors/majors modes. It's the same.
 You define one or some "lcss" witch is a minor context, specific to your web site, and the imported css children should be major, easy to use in other contexts, because of selector inheritance.
 They should be as short as possible, and strongly reusable, and they can take advange of already existing css variables (see https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)
+So, you can use simple css files as "functions" with default variables definitions (var(--my-var, fallback_value);), and assign variabbles in your lcss file (--my-var: my_value;)
 
 Just transform this :
 ```
