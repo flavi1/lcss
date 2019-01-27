@@ -2,23 +2,37 @@
 
 $string = <<<CSS
 
+
+@(body aside.left, body aside.right ) {
+  . {      /* point should mean "current selector full path itself" */
+    color:red;
+  }
+  span.my-sub-span {
+    color red
+  }
+}
+
+
+
+
+
 @(#parent1) {
-
-	@(.sub2.active) {
-
-		body { color: #888; }
-
-		@media print { body { color: #333; } }
-	}
-
-	code { color: blue; }
-
+  @(.sub1.myClass > span, .sub2.active) {
+    body { color: #888; }
+    @media print {
+      body { color: #333; }
+    }
+  }
+  @(.sub3) {
+    code { color: red; }
+  }
+  code { color: blue; }
 }
 
 @(#parent) {
-	.sous-style {
-		display: none;
-	}
+  .sous-style {
+    display: none;
+  }
 }
 
 CSS;
@@ -70,8 +84,12 @@ class parseCss {
 			else {
 				if(is_array($c))
 					$c = $this->render($c);
+				
 				if(strpos($s, '@') !== 0)
-					$s = str_replace(',', ' '.$s.',', $this->currentPrefix()).' '.$s;
+					if($s == '.')
+						$s = $this->currentPrefix();
+					else
+						$s = str_replace(',', ' '.$s.',', $this->currentPrefix()).' '.$s;
 				$out .= $s.' {'."\n".$c."\n".'}'."\n\n";
 			}
 			
